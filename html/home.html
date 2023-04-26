@@ -5,8 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
+    <link href="../css/form.css" rel="stylesheet" />
   </head>
   <body>
-    SAUDADES REACT
+    <article class="container">
+      <header class="cabecalho">
+        <h2>Home</h2>
+      </header>
+      <div id="home" class="form">
+        <button onclick="{goToCadastraTeste()}">Cadastro de Testes</button>
+        <button onclick="{goToListaTeste()}">Lista de Testes</button>
+        <button onclick="{goToListaResultado()}">Lista de Resultados</button>
+      </div>
+    </article>
+    <script src="../js/home.js"></script>
   </body>
 </html>

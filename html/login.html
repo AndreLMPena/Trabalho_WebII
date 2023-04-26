@@ -5,36 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link href="../css/login.css" rel="stylesheet" />
+    <link href="../css/form.css" rel="stylesheet" />
   </head>
   <body>
+    <button class="botaoHome" onclick="{goToHome()}">Home</button>
     <article class="container">
-        <header class="cabecalho">
-          <h2>Iniciar sessão</h2>
-        </header>
-  
-        <form id="loginForm" class="form">
-          <section class="form-control">
-            <label htmlFor="username">Nome de usuário</label>
-            <input
-              type="text"
-              id="username"
-              placeholder="Digite seu nome de usuário..."
-            />
-          </section>
-  
-          <section class="form-control">
-            <label htmlFor="password">Senha</label>
-            <input
-              type="password"
-              id="password"
-              placeholder="Digite sua senha..."
-            />
-          </section>
-  
-          <button type="submit">Enviar</button>
-        </form>
+      <header class="cabecalho">
+        <h2>Iniciar sessão</h2>
+      </header>
 
-        <script type="module" src="../js/login.js"></script>
+      <form id="loginForm" class="form">
+        <section class="form-control">
+          <label htmlFor="username">Nome de usuário</label>
+          <input
+            type="text"
+            id="username"
+            placeholder="Digite seu nome de usuário..."
+          />
+        </section>
+
+        <section class="form-control">
+          <label htmlFor="password">Senha</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Digite sua senha..."
+          />
+        </section>
+
+        <button type="submit">Enviar</button>
+      </form>
+
+      <script type="module" src="../js/login.js"></script>
+      <script src="../js/home.js"></script>
+    </article>
   </body>
 </html>

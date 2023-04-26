@@ -5,8 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cadastro de perguntas</title>
+    <link href="../css/form.css" rel="stylesheet" />
   </head>
   <body>
-    Gomu Gomu no King kong gun
+    <button class="botaoHome" onclick="{goToHome()}">Home</button>
+    <article class="container">
+      <header class="cabecalho">
+        <h2>Cadastro de perguntas</h2>
+      </header>
+
+      <form id="cadastraPerguntasForm" class="form">
+        <section class="form-control">
+          <label htmlFor="question">Pergunta:</label>
+          <input
+            type="text"
+            id="question"
+            placeholder="Digite a sua pergunta..."
+          />
+
+          <label htmlFor="opcaoA">Opção A:</label>
+          <input type="text" id="opcaoA" placeholder="Digite a opção A..." />
+
+          <label htmlFor="opcaoB">Opção B:</label>
+          <input type="text" id="opcaoB" placeholder="Digite a opção B..." />
+
+          <label htmlFor="opcaoC">Opção C:</label>
+          <input type="text" id="opcaoC" placeholder="Digite a opção C..." />
+
+          <label htmlFor="opcaoD">Opção D</label>
+          <input type="text" id="opcaoD" placeholder="Digite a opção D..." />
+
+          <label htmlFor="opcaoE">Opção E:</label>
+          <input type="text" id="opcaoE" placeholder="Digite a opção E..." />
+
+          <label htmlFor="resposta">Resposta:</label>
+          <input type="text" id="resposta" placeholder="Digite a resposta..." />
+        </section>
+
+        <button type="button">Adicionar pergunta!</button>
+        <button type="submit">Finalizar teste!</button>
+      </form>
+    </article>
+    <script src="../js/home.js"></script>
   </body>
 </html>

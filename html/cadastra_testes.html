@@ -5,27 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cadastro de Testes</title>
-    <link href="../css/cadastra_teste.css" rel="stylesheet" />
+    <link href="../css/form.css" rel="stylesheet" />
   </head>
   <body>
+    <button class="botaoHome" onclick="{goToHome()}">Home</button>
     <article class="container">
-        <header class="cabecalho">
-          <h2>Deseja cadastrar um novo teste?</h2>
-        </header>
-  
-        <form id="cadastraTesteForm" class="form">
-          <section class="form-control">
-            <label htmlFor="testname">Nome do novo teste</label>
-            <input
-              type="text"
-              id="testname"
-              placeholder="Digite o nome do novo teste..."
-            />
-          </section>
-  
-          <button type="submit">Ir para o cadastro de Perguntas</button>
-        </form>
+      <header class="cabecalho">
+        <h2>Deseja cadastrar um novo teste?</h2>
+      </header>
 
-        <script type="module" src="../js/cadastra_teste.js"></script>
+      <form id="cadastraTesteForm" class="form">
+        <section class="form-control">
+          <label htmlFor="testname">Nome do novo teste</label>
+          <input
+            type="text"
+            id="testname"
+            placeholder="Digite o nome do novo teste..."
+          />
+        </section>
+
+        <button type="submit">Ir para o cadastro de Perguntas</button>
+      </form>
+
+      <script type="module" src="../js/cadastra_teste.js"></script>
+      <script src="../js/home.js"></script>
+    </article>
   </body>
 </html>
