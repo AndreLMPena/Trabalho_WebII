@@ -78,3 +78,50 @@ body {
   margin-left: 30px;
   font-size: 20px;
 }
+
+.form table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  border: 2px solid black;
+}
+
+.form td,
+.form th {
+  border: 1px solid black;
+  padding: 8px;
+}
+
+.form th {
+  background-color: #ddd;
+  font-weight: bold;
+}
+
+.form tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.form tr:hover {
+  background-color: #ddd;
+}
+
+.form td:first-child,
+.form th:first-child {
+  border-left: none;
+}
+
+.form td:last-child,
+.form th:last-child {
+  border-right: none;
+}
+
+.form tr:first-child td,
+.form tr:first-child th {
+  border-top: none;
+}
+
+.form tr:last-child td,
+.form tr:last-child th {
+  border-bottom: none;
+}
