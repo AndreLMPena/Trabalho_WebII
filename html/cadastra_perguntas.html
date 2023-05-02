@@ -42,8 +42,16 @@
           <input type="text" id="resposta" placeholder="Digite a resposta..." />
         </section>
 
-        <button type="button">Adicionar pergunta!</button>
-        <button type="submit">Finalizar teste!</button>
+        <button
+          id="maisPergunta"
+          onclick="{adicionarPergunta(), limparInputs()}"
+          type="button"
+        >
+          Adicionar pergunta!
+        </button>
+        <button onclick="{finalizarTeste()}" type="submit">
+          Finalizar teste!
+        </button>
       </form>
     </article>
 

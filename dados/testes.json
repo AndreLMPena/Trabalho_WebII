@@ -44,5 +44,28 @@
         "resposta": "opcaoB"
       }
     ]
+  },
+  {
+    "teste": "Teste de One Piece",
+    "perguntas": [
+      {
+        "pergunta": "Qual desses personagens não faz parte da pior geração?",
+        "opcaoA": "Monkey D Luffy",
+        "opcaoB": "Roronoa Zoro",
+        "opcaoC": "Trafalgar Law",
+        "opcaoD": "Eustass Kidd",
+        "opcaoE": "Vinsmoke Sanji",
+        "resposta": "opcaoE"
+      },
+      {
+        "pergunta": "Qual desses personagens nunca foram um dos 7 corsários?",
+        "opcaoA": "Donquixote Doflamingo",
+        "opcaoB": "Boa Hancock",
+        "opcaoC": "Sir Crocodile",
+        "opcaoD": "Portgas D Ace",
+        "opcaoE": "Dracule Mihawk",
+        "resposta": "opcaoD"
+      }
+    ]
   }
 ]

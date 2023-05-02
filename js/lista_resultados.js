@@ -11,16 +11,6 @@ const resultados = [
     simulaAplicado: 4,
     simulaRespostaCerta: 6,
   },
-  {
-    teste: "Teste de League Of Legends",
-    simulaAplicado: 2,
-    simulaRespostaCerta: 4,
-  },
-  {
-    teste: "Teste de Valorant",
-    simulaAplicado: 1,
-    simulaRespostaCerta: 0,
-  },
 ];
 
 function exibirResultados(resultados) {

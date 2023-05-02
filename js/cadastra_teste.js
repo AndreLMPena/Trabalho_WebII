@@ -1,25 +1,10 @@
 const cadastraTesteForm = document.getElementById("cadastraTesteForm");
 
 cadastraTesteForm.addEventListener("submit", (event) => {
-  event.preventDefault();
+  event.preventDefault(); // evita que o formulário seja enviado
 
-  // const teste = {
-  //   nome: document.getElementById("testname").value,
-  //   perguntas: [
-  //     {
-  //       pergunta: "pergunta?",
-  //       opcaoA: "opcao A",
-  //       opcaoB: "opcao B",
-  //       opcaoC: "opcao C",
-  //       opcaoD: "opcao D",
-  //       opcaoE: "opcao E",
-  //       resposta: "resposta correta",
-  //     },
-  //   ],
-  // };
-
-  // cadastrarTeste(teste);
-
-  // Redireciona para a página de cadastro de perguntas
-  window.location.href = "cadastra_perguntas.html";
+  const testname = document.getElementById("testname").value;
+  localStorage.setItem("testname", testname);
+  // redireciona para a página de cadastro de perguntas
+  window.open("../html/cadastra_perguntas.html", "_self");
 });
