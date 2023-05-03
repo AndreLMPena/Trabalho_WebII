@@ -5,7 +5,69 @@ const listaPergunta = document.getElementById("listaPergunta");
 
 const numPerguntas = teste.perguntas.length;
 let indicePerguntaAtual = 0;
-let numAcertos = 0;
+let qtdAcertos = 0;
+let qtdPerguntas = 0;
+
+// async function cadastraResultados() {
+//   const resultados = {
+//     teste: teste.teste,
+//     qtd_perguntas: qtdPerguntas,
+//     qtd_Acertos: qtdAcertos,
+//   };
+
+//   const response = await fetch("http://localhost:3001/resultados", {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify(resultados),
+//   });
+
+//   if (!response.ok) {
+//     const errorMessage = await response.text();
+//     console.error(errorMessage);
+//     return;
+//   }
+// }
+
+async function cadastraResultados() {
+  const resultados = {
+    teste: teste.teste,
+    qtd_perguntas: qtdPerguntas,
+    qtd_Acertos: qtdAcertos,
+  };
+
+  // Faz a atualização da lista local
+  const listaResultados = await (
+    await fetch("http://localhost:3001/resultados")
+  ).json();
+  const testeExistente = listaResultados.find(
+    (item) => item.teste === teste.teste
+  );
+
+  if (testeExistente) {
+    // Atualiza o objeto existente na lista com as novas informações
+    testeExistente.qtd_perguntas += qtdPerguntas;
+    testeExistente.qtd_Acertos += qtdAcertos;
+
+    await fetch(`http://localhost:3001/resultados/${testeExistente.teste}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(testeExistente),
+    });
+  } else {
+    // Adiciona um novo objeto à lista
+    await fetch("http://localhost:3001/resultados", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(resultados),
+    });
+  }
+}
 
 const exibirPergunta = (indice) => {
   const perguntaAtual = teste.perguntas[indice];
@@ -31,26 +93,28 @@ const exibirPergunta = (indice) => {
   const botaoProxima = document.createElement("button");
   if (indice < numPerguntas - 1) {
     botaoProxima.textContent = "Próxima pergunta";
+    qtdPerguntas++;
   } else {
     botaoProxima.textContent = "Finalizar teste";
+    qtdPerguntas++;
   }
   botaoProxima.addEventListener("click", () => {
     const opcaoSelecionada = document.querySelector(
       "input[name='opcoes']:checked"
     ).value;
     if (opcaoSelecionada === perguntaAtual.resposta) {
-      numAcertos++;
+      qtdAcertos++;
     }
     if (indice < numPerguntas - 1) {
       indicePerguntaAtual++;
       exibirPergunta(indicePerguntaAtual);
     } else {
-      localStorage.setItem("numAcertos", numAcertos);
+      localStorage.setItem("qtdAcertos", qtdAcertos);
+      cadastraResultados();
       window.location.href = "../html/apresenta_resultado.html";
     }
   });
   divPergunta.appendChild(botaoProxima);
-
   listaPergunta.innerHTML = "";
   listaPergunta.appendChild(divPergunta);
 };
